@@ -13,7 +13,7 @@ public class HelloService {
     JdbcTemplate jdbcTemplate;
 
     public String getCountryName(String code) {
-        final String query = "SELECT COUNTRY_NAME FROM COUNTRY WHERE COUNTRY_CODE = ?";
+        final String query = "SELECT country_name FROM country WHERE country_code = ?";
         List<String> countries = jdbcTemplate.query(query, (rs, i) -> rs.getString("country_name"), code);
         return countries.get(0);
 
